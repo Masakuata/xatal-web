@@ -1,0 +1,37 @@
+{% extends 'admin-layout.html' %}
+
+{% block content %}
+<a href="/register-project" class="btn btn-primary my-4"><i class="fas fa-plus"></i> Registrar proyecto</a>
+<div class="row justify-content-center">
+    <table class="table striped">
+        <thead>
+          <tr>
+            <th scope="col">Título</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+    
+          {% for project in portfolio %}
+          <tr>
+            <th scope="row">{{project.title}}</th>
+            <td>{{project.client}}</td>
+            <td>
+                <a href="/proyecto/{{project.id}}" target="_blank" class="btn btn-primary btn-sm">
+                    <i class="fas fa-eye"></i>
+                  </a>
+                <a href="/update-project/{{project.id}}" class="btn btn-success btn-sm">
+                    <i class="fas fa-edit"></i>
+                  </a>
+                <a href="/delete-project/{{project.id}}" class="btn btn-danger btn-sm">
+                    <i class="fas fa-trash"></i>
+                  </a>
+            </td>
+          </tr>
+          {% endfor %}
+        
+        </tbody>
+      </table>
+</div>
+{% endblock %}

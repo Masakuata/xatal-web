@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>{{title}}</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="{{url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+
+    <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet" />
+  </head>
+
+  <body style="overflow-x: hidden;">
+    
+    <div class="my-wrapper">
+      <div class="my-sidebar">
+          <h2>Xatal</h2>
+          <ul id="navList" class="p-0">
+              <li class="navItem"><a href="/projects"><i class="fas fa-project-diagram"></i>Proyectos</a></li>
+              <li class="navItem"><a href="/messages"><i class="fas fa-envelope"></i>Mensajes</a></li>
+              <li class="navItem"><a href="/testimonials"><i class="fas fa-address-card"></i>Testimonios</a></li>
+              <li class="navItem"><a href="/" target="_blank"><i class="fas fa-window-maximize"></i>Página</a></li>
+              <li class="navItem"><a href="/logout"><i class="fas fa-sign-out-alt"></i>Cerrar sesión</a></li>
+          </ul> 
+          <div class="social_media">
+            <a href="http://facebook.com/xatalweb" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/xatalweb" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/xatalweb/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <main class="main_content container px-5">
+        <h1 class="my-4">{{title}}</h1>
+        {% block content %}
+          <!--  -->
+        {% endblock %}  
+      </main>
+      </div>
+  </div>
+
+    <!-- Vendor JS Files -->
+    <script src="{{url_for('static', filename='assets/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/vendor/jquery.easing/jquery.easing.min.js')}}"></script>
+  </body>
+</html>
+

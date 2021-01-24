@@ -1,0 +1,44 @@
+{% extends 'admin-layout.html' %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <form method="POST" class="my-5">
+      <div class="mb-3">
+        <label for="title" class="form-label">Título</label>
+        <input type="text" class="form-control" id="title" name="title" value="{{project.title}}" />
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Descripción corta</label>
+        <input type="text" class="form-control" id="description" name="description" value="{{project.description}}"/>
+      </div>
+      <div class="mb-3">
+        <label for="url" class="form-label">URL</label>
+        <input type="text" class="form-control" id="url" name="url" value="{{project.url}}"/>
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">URL Imagen</label>
+        <input type="text" class="form-control" id="image" name="image" value="{{project.image}}"/>
+      </div>
+      <div class="mb-3">
+        <label for="category" class="form-label">Categoría</label>
+        <input type="text" class="form-control" id="category" name="category" value="{{project.category}}"/>
+      </div>
+      <div class="mb-3">
+        <label for="client" class="form-label">Cliente</label>
+        <input type="text" class="form-control" id="client" name="client" value="{{project.client}}"/>
+      </div>
+      <div class="mb-3">
+        <label for="date" class="form-label">Fecha</label>
+        <input type="date" class="form-control" id="date" name="date" value="{{project.date}}"/>
+      </div>
+      <div class="mb-3">
+        <label for="text" class="form-label">Descripción larga</label>
+        <textarea class="form-control" id="text" name="text" rows="4" >{{project.text}}</textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
